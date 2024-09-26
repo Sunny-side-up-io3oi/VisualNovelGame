@@ -11,7 +11,7 @@ public class SceneChanger : MonoBehaviour
     }
     public void Episode_1()
     {
-        SceneManager.LoadScene("3)Episode_1");
+        SceneManager.LoadScene("3)EP1");
     }
 
     public void Note()
