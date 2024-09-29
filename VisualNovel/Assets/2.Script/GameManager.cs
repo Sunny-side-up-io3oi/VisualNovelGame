@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int hintKeys;
     public int progress;
 
-    public TextMeshProUGUI hintKeysText; // ÈùÆ®Å° °³¼ö¸¦ Ç¥½ÃÇÒ ÅØ½ºÆ®
+    public TextMeshProUGUI hintKeysText; // ï¿½ï¿½Æ®Å° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®
     public string saveFilePath;
 
     private void Awake()
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateHintKeysText(); // ¸Å ÇÁ·¹ÀÓ¸¶´Ù ÈùÆ®Å° ÅØ½ºÆ® ¾÷µ¥ÀÌÆ®
+        UpdateHintKeysText(); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®Å° ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     }
 
     public void AddHintKey()
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHintKeysText()
     {
-        hintKeysText.text = "ÈùÆ®Å°: " + hintKeys.ToString();
+        hintKeysText.text = "ï¿½ï¿½Æ®Å°: " + hintKeys.ToString();
     }
 }
 
