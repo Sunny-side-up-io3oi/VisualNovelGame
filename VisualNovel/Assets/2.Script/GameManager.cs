@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int hintKeys;
     public int progress;
 
-    public TextMeshProUGUI hintKeysText; // ��ƮŰ ������ ǥ���� �ؽ�Ʈ
+    public TextMeshProUGUI hintKeysText; 
     public string saveFilePath;
 
     private void Awake()
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateHintKeysText(); // �� �����Ӹ��� ��ƮŰ �ؽ�Ʈ ������Ʈ
+        UpdateHintKeysText(); 
     }
 
     public void AddHintKey()
