@@ -26,6 +26,18 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("1)Main");
     }
+
+    public void Crime()
+    {
+        SceneManager.LoadScene("6)Crime Scene");
+    }
+
+    public void Office() 
+    {
+        SceneManager.LoadScene("7)Office");
+    }
+
+
 }
 
 
