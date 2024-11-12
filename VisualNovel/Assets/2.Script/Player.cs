@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,10 +9,12 @@ public class Player : MonoBehaviour
     private float h;
     private float v;
     private bool isHorizonMove;
+    private Animator anim;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); // Animator 초기화
     }
 
     void Update()
@@ -24,6 +28,10 @@ public class Player : MonoBehaviour
         bool vDown = Input.GetButtonDown("Vertical");
         bool hUp = Input.GetButtonUp("Horizontal");
         bool vUp = Input.GetButtonUp("Vertical");
+
+        // Animation
+        anim.SetInteger("hAxisRaw", (int)h);
+        anim.SetInteger("vAxisRaw", (int)v);
 
         if (hDown)
         {
