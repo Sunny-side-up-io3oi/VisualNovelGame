@@ -9,12 +9,15 @@ public class Player : MonoBehaviour
     private float h;
     private float v;
     private bool isHorizonMove;
-    private Animator anim;
+    private Animator animator;
+    public SpriteRenderer playerRender; // 캐릭터 SpriteRenderer 컴포넌트를 연결합니다.
+    public float magnituteThreshold = 0.1f; // 움직임 감지 임계값
+    private static readonly string isWalking = "isWalking"; // Animator 파라미터 이름
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); // Animator 초기화
+        animator = GetComponent<Animator>(); // Animator 초기화
     }
 
     void Update()
@@ -28,10 +31,6 @@ public class Player : MonoBehaviour
         bool vDown = Input.GetButtonDown("Vertical");
         bool hUp = Input.GetButtonUp("Horizontal");
         bool vUp = Input.GetButtonUp("Vertical");
-
-        // Animation
-        anim.SetInteger("hAxisRaw", (int)h);
-        anim.SetInteger("vAxisRaw", (int)v);
 
         if (hDown)
         {
@@ -53,5 +52,21 @@ public class Player : MonoBehaviour
         Vector2 moveVec = isHorizonMove ? new Vector2(h, 0) : new Vector2(0, v);
         // 캐릭터 이동
         rigid.MovePosition(rigid.position + moveVec * moveSpeed * Time.fixedDeltaTime);
+
+        // Move 메서드 호출
+        Move(moveVec);
+    }
+
+    private void Move(Vector2 vector)
+    {
+        // 움직임에 따라 애니메이션 상태 변경
+        animator.SetBool(isWalking, vector.magnitude > magnituteThreshold);
+
+        // 좌우 반전 설정
+        playerRender.flipX = vector.x < 0;
+
+        // 방향 설정
+        animator.SetFloat("xDir", vector.x);
+        animator.SetFloat("yDir", vector.y);
     }
 }
