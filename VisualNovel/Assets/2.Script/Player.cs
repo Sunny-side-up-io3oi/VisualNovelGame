@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     private float v;
     private bool isHorizonMove;
     private Animator animator;
-    public SpriteRenderer playerRender; // 캐릭터 SpriteRenderer 컴포넌트를 연결합니다.
+    //public SpriteRenderer playerRender; // 캐릭터 SpriteRenderer 컴포넌트를 연결합니다.
     public float magnituteThreshold = 0.1f; // 움직임 감지 임계값
-    private static readonly string isWalking = "isWalking"; // Animator 파라미터 이름
+    private static readonly string isWalking = "isWalk"; // Animator 파라미터 이름
 
     void Awake()
     {
@@ -62,11 +62,11 @@ public class Player : MonoBehaviour
         // 움직임에 따라 애니메이션 상태 변경
         animator.SetBool(isWalking, vector.magnitude > magnituteThreshold);
 
-        // 좌우 반전 설정
-        playerRender.flipX = vector.x < 0;
-
         // 방향 설정
-        animator.SetFloat("xDir", vector.x);
-        animator.SetFloat("yDir", vector.y);
+        if (vector.magnitude > 0)
+        {
+            animator.SetFloat("xDir", vector.x);
+            animator.SetFloat("yDir", vector.y);
+        }
     }
 }
