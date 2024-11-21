@@ -1,7 +1,9 @@
 # VisualNovelGame
-
+Unity 기반 모바일 플랫폼 비주얼 노벨 게임입니다.
 ###
-![T_BG_O2](https://github.com/user-attachments/assets/9c6233c0-3ff1-4751-bad6-057b35c04ceb)
+
+![20241121_094737](https://github.com/user-attachments/assets/9a902b5e-ae44-423d-bea7-e0483a16729d)
+
 
 ###
 
