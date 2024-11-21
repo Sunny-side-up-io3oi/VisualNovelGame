@@ -61,8 +61,12 @@ Unity 기반 모바일 플랫폼 비주얼 노벨 게임입니다.
 
 # 🤖 개발환경
 Version : Unity 3.41f1
+<br>
+Server : Pothon
+<br>
 DB : MYSQL
-Art : 챗GPT 
+<br>
+Art : 챗GPT, AdobePhotoshop
 
 <br>
 
