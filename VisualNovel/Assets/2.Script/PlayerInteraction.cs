@@ -12,7 +12,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (itemObject != null)
             {
-                inventory.AddItem(itemObject.itemData); // 아이템 추가
+                inventory.AddItem(itemObject.itemData);
                 Destroy(collision.gameObject); // 아이템 오브젝트 제거
             }
         }
